@@ -1,0 +1,36 @@
+.cls-60-1,.cls-60-2{fill:none;stroke-miterlimit:10;}.cls-60-1{stroke:#262638;stroke-width:28px;}.cls-60-2{stroke:#FF6500;stroke-width:12px;}.cls-60-3{fill:#262638;}.cls-60-4{font-size:80px;}.cls-60-4,.cls-5,.cls-60-6{fill:#262638;}.cls-60-5{font-size:37px;}.cls-60-6{font-size:39px;}
+
+.cls-1,.cls-6{fill:none;stroke-miterlimit:10;}.cls-1{stroke:#262638;stroke-width:28px;}.cls-2{fill:#262638;}.cls-3{font-size:80px;}.cls-3,.cls-4,.cls-5{fill:#262638;font-family:ArialMT, Arial;}.cls-4{font-size:37px;}.cls-5{font-size:39px;}.cls-6{stroke:#FF6500;stroke-width:12px;}
+
+
+.maxrepholder{
+    background-color: #262638;
+    padding: 10px;
+    color: white;
+}
+
+.blue_Gradient{
+    background: rgb(24,148,255);
+background: linear-gradient(90deg, rgba(24,148,255,1) 59%, rgba(0,107,236,1) 89%);
+    margin:0;
+    display: inline-block;
+    width: 100%;
+    padding: 30px;
+}
+ 
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+#site_footer{
+     background-color: #262638;
+    text-align: center;
+}
+
+
+.calc{
+    background: rgb(255,154,36);
+    background: linear-gradient(90deg, rgba(255,154,36,1) 18%, rgba(255,121,0,1) 55%);
+}

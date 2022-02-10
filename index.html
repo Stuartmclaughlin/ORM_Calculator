@@ -1,0 +1,155 @@
+<htmL>
+<head>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.tutorialjinni.com/bootstrap-touchspin/4.2.5/jquery.bootstrap-touchspin.min.js"></script>
+<script src="ORM.js"></script>
+</head>
+
+<section>
+
+<div class="jumbotron jumbotron-fluid mb-0">
+  <div class="container">
+    <h1 class="display-4 text-center">ONE REP MAX CALCULATOR</h1>
+    <p class="lead text-center">Calculate your one rep max by using the calculator below! Your one rep max is the maximum weight that you can lift for one rep on an exercise. Do not attempt a one rep max without someone there to spot you and help you with the weight for safety purposes!</p>
+      </div>
+</div>
+    <div class="blue_Gradient">
+     <div class="container">
+    <div class="row">
+    <div class="col col-md-6 col-lg-4">
+    
+        <div class="card text-white mb-3 calc">
+  <div class="card-header"><h4>CALCULATE YOUR TOP LIFT!</h4></div>
+  <div class="card-body">
+      
+      
+      <form>
+          
+    <small>If you are saving your one rep max pease use LBS.</small>      
+<div class="form-group"> 
+<label for="weightunit">Units:</label>
+
+<label class="btn active">
+<input type="radio" name='weightunit' id="weightunit" value="lbs" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Lbs</span>
+</label>
+<label class="btn">
+<input type="radio" name='weightunit' value="kg"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Kg</span>
+</label>
+
+    </div>
+    
+
+<div class="form-group">
+<label for="reps">Number of reps:</label>
+<input id="reps" class="form-control" type="text" placeholder="1" name="reps" data-tooltip title="Enter the number of repitions of the exercise that you done!" required>
+    </div>
+    
+<div class="form-group">
+<label for="weight">Weight lifted:</label>
+<input id="weight" class="form-control" type="text" placeholder="10" name="weight" data-tooltip title="Enter the weight that you completed the above repitions with!" required>
+</div>
+    
+<div class="form-group">
+<button type="button" class="btn btn-primary" onclick="calculateReps()" data-tooltip title="Calculate the one rep max in the unit selected!">Go!</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="save" data-tooltip title="Save the calculated tooltip to the table! Make sure you calculate it in LBs to save it!">Save One Rep Max</button>
+</div>
+        </form>
+  </div>
+</div>
+        
+</div>
+        
+<div class="col-sm-5 col-lg-8 col-md-6">
+    
+    <div class="maxrepholder"><h3 class="text-center">Your one-rep max is: <span id="maxrep">0</span><span class="svgunit2"> LBS</span></h3></div>
+    
+<div class="row justify-content-center">
+    
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle55" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" transform="translate(180.92 211.3)" text-anchor="middle">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">55%</text><path class="cls-6" d="M142.81,294.9A110,110,0,1,0,179,81"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle60" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <circle class="cls-60-1" cx="178.65" cy="190.65" r="109.65"/><path class="cls-60-2" d="M114.11,279.47A109.64,109.64,0,1,0,179.35,81.71"/><rect class="cls-60-3" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-60-3" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-60-4" transform="translate(180.92 211.3)" text-anchor="middle">0</text><text class="cls-60-5 cls-60-6 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-60-6" transform="translate(285.57 66.62)">60%</text></svg></div>
+</div>
+
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle65" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" transform="translate(180.92 211.3)" text-anchor="middle">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">65%</text><path class="cls-6" d="M88.83,255.23A110,110,0,1,0,180,81.75"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle70" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" text-anchor="middle" transform="translate(180.92 211.3)">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">70%</text><path class="cls-6" d="M74.68,223A110,110,0,1,0,180.36,82.38"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle75" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" text-anchor="middle" transform="translate(180.92 211.3)">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">75%</text><path class="cls-6" d="M70.79,188.91c0,1-.05,2-.05,3a110,110,0,1,0,110-110"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle80" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" text-anchor="middle" transform="translate(180.92 211.3)">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">80%</text><path class="cls-6" d="M75.69,152.7a110,110,0,1,0,103.2-71.85"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle85" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3"  text-anchor="middle" transform="translate(180.92 211.3)">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)" >85%</text><path class="cls-6" d="M91.88,123.31A110,110,0,1,0,178.57,81"/></svg></div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6">
+<div id="test-circle90" class="svg-container"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle class="cls-1" cx="178.65" cy="190.65" r="109.65"/><rect class="cls-2" x="244.46" y="79.5" width="17.87" height="4.32" transform="translate(48.44 251.58) rotate(-57.52)"/><rect class="cls-2" x="256.68" y="73" width="114.32" height="4.71"/><text class="cls-3" transform="translate(180.92 211.3)" text-anchor="middle">0</text><text class="cls-4 svgunit" transform="translate(159.57 245.45)">LB</text><text class="cls-5" transform="translate(285.57 66.62)">90%</text><path class="cls-6" d="M91.88,123.31A110,110,0,1,0,178.57,81"/></svg></div>
+</div>
+    </div></div></div>
+
+
+
+
+<!-- ADD Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">PLEASE SPECIFY WHAT EXERCISE AND WHAT DATE YOU COMPLETED THIS LIFT</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+        <form action="{{ action('OrmController@store')}}" method="POST">
+            
+   @csrf
+            
+  <div class="form-group">
+    <label for="Exercise">EXERCISE</label>
+    <input class="form-control" id="Exercise" aria-describedby="emailHelp" placeholder="Enter Exercise" name="Exercise" data-tooltip title="Enter the exercise that relates to the one rep max that you have calculated" required>
+      
+<!--    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+            
+  <div class="form-group">
+    <label for="exampleInputPassword1">ONE REP MAX</label>
+    <input class="form-control" id="ORM_Val"  name="ORM" readonly required>
+    <small>Please make sure that you save all of of your One Rep Maxes in LBS.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">DATE</label>
+    <input type="date" class="form-control" value='<?php echo date('Y-m-d'); ?>' placeholder="Password"  data-tooltip title="Enter the date or leave as todays date!" name="created" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary" data-tooltip title="Save to table!">SAVE</button>
+</form>
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END ADD Modal -->
+</div> 
+</div>
+
+</section>
+
+</html>
